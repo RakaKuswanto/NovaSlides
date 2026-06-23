@@ -34,31 +34,35 @@
       position: absolute;
       bottom: 20px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scale(0.85);
+      transform-origin: bottom center;
       background: rgba(10, 10, 15, 0.6);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-glass);
       border-radius: 12px;
-      padding: 12px 24px;
+      padding: 12px 20px;
       display: flex;
-      flex-wrap: nowrap;
+      flex-direction: column;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
       align-items: center;
       z-index: 100;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
       transition: opacity 0.3s ease;
       width: max-content;
       max-width: 95vw;
-      overflow-x: auto;
-    }
-    .ui-container::-webkit-scrollbar {
-      display: none;
     }
     .ui-container:hover {
       background: rgba(30, 30, 35, 0.75);
       border-color: rgba(255, 255, 255, 0.2);
+    }
+    .ui-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
     }
     .branding {
       display: flex;
@@ -121,7 +125,7 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-right: none;
-      width: 150px;
+      width: 130px;
     }
     .icon-button {
       background: rgba(0, 0, 0, 0.3);
@@ -180,7 +184,7 @@
     /* Custom Dropdown Styles */
     .custom-dropdown-container {
       position: relative;
-      width: 160px;
+      width: 130px;
     }
     .custom-dropdown-button {
       background: rgba(0, 0, 0, 0.3);
@@ -316,6 +320,17 @@
         8px 8px 0 #ef233c,
         9px 9px 10px rgba(0,0,0,0.8);
     }
+    
+    .text-mode-none { display: none !important; }
+    .text-mode-mask { display: none !important; }
+    .text-mode-outline #textOverlay {
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+    }
+    .text-mode-glow #textOverlay {
+      color: white;
+      text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4);
+    }
 
     @keyframes textGlitch {
       2%, 64% { transform: translate(2px, 0) skew(0deg); }
@@ -435,12 +450,13 @@
   <div id="toastMessage" class="toast-overlay">TIPS: Klik area di luar animasi ini lalu tekan ESC untuk keluar.</div>
   
   <div class="ui-container" id="uiPanel">
-    <div class="branding">
-      <span class="brand-title">NovaSlides</span>
-      <span class="brand-subtitle">Shader Engine</span>
-    </div>
-    <div class="control-group">
-      <div class="custom-dropdown-container" id="shaderDropdown">
+    <div class="ui-row">
+      <div class="branding">
+        <span class="brand-title">NovaSlides</span>
+        <span class="brand-subtitle">Shader Engine</span>
+      </div>
+      <div class="control-group">
+        <div class="custom-dropdown-container" id="shaderDropdown">
         <button class="custom-dropdown-button" id="shaderDropdownBtn">Fire</button>
         <svg class="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
@@ -521,11 +537,12 @@
            </div>
         </div>
       </div>
-    </div>
+    </div> <!-- End Row 1 -->
 
-    <div class="control-group">
-      <label style="font-size: 12px;">Quality</label>
-      <div class="custom-dropdown-container" id="qualityDropdown" style="width: 110px;">
+    <div class="ui-row">
+      <div class="control-group">
+        <label style="font-size: 12px;">Quality</label>
+        <div class="custom-dropdown-container" id="qualityDropdown" style="width: 100px;">
         <button class="custom-dropdown-button" id="qualityDropdownBtn">Auto (FPS)</button>
         <svg class="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         <div class="custom-dropdown-menu" id="qualityDropdownMenu">
@@ -545,7 +562,7 @@
 
     <div class="control-group">
       <label style="font-size: 12px;">Mode</label>
-      <div class="custom-dropdown-container" id="modeDropdown" style="width: 120px;">
+      <div class="custom-dropdown-container" id="modeDropdown" style="width: 100px;">
         <button class="custom-dropdown-button" id="modeDropdownBtn">None</button>
         <svg class="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         <div class="custom-dropdown-menu" id="modeDropdownMenu">
@@ -559,6 +576,7 @@
         </div>
       </div>
     </div>
+    </div> <!-- End Row 2 -->
   </div>
 
   <script type="module" src="/src/main.js"></script>
