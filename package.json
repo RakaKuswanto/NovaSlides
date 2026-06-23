@@ -1,0 +1,16 @@
+{
+  "name": "novaslides",
+  "version": "1.0.0",
+  "description": "Cinematic WebGL Shader Engine Add-in for Microsoft PowerPoint",
+  "author": "Raka Kuswanto",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "parcel public/index.html --https",
+    "build": "parcel build public/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="ContentApp">
+  <!-- 1. UUID Unik Aplikasi (Jangan diubah agar Add-in tidak dianggap aplikasi baru) -->
+  <Id>085bf313-61cd-4bb7-a96e-b15f1b40e6ce</Id>
+  
+  <!-- 2. Versi (Harus dinaikkan misal 1.0.0.1 setiap kali update ke AppSource) -->
+  <Version>1.0.0.0</Version>
+  
+  <!-- 3. Nama Kreator / Perusahaan Anda -->
+  <ProviderName>NovaSlides Team</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  
+  <!-- 4. Nama Aplikasi di Toko (Maksimal 32 Karakter) -->
+  <DisplayName DefaultValue="NovaSlides: 3D Shader Engine"/>
+  
+  <!-- 5. Deskripsi Singkat untuk Toko -->
+  <Description DefaultValue="Professional WebGL shader engine for PowerPoint. Add dynamic 3D backgrounds, neon text, and interactive animations directly to your slides."/>
+  
+  <!-- 6. Ikon Aplikasi. WAJIB menggunakan URL absolut dari hosting akhir Anda. 
+       Siapkan gambar PNG ukuran 32x32px dan 64x64px -->
+  <IconUrl DefaultValue="https://[NAMA-HOSTING-ANDA].com/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://[NAMA-HOSTING-ANDA].com/assets/icon-64.png"/>
+  
+  <!-- 7. Tautan Dukungan, Kebijakan Privasi, dll. WAJIB untuk lolos AppSource -->
+  <SupportUrl DefaultValue="https://[NAMA-HOSTING-ANDA].com/support.html"/>
+  
+  <!-- 8. Domain yang diizinkan untuk mencegah blokir keamanan -->
+  <AppDomains>
+    <AppDomain>https://[NAMA-HOSTING-ANDA].com</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Presentation"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <!-- 9. URL UTAMA: Ganti dengan URL Live Hosting Anda (misal Vercel/Netlify) -->
+    <SourceLocation DefaultValue="https://[NAMA-HOSTING-ANDA].com/index.html"/>
+    <RequestedWidth>1280</RequestedWidth>
+    <RequestedHeight>720</RequestedHeight>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
